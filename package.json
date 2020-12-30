@@ -1,0 +1,15 @@
+{
+  "name": "firstAloneProject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@gitlab.platdep.shuyun.com:2222/yue.ren/firstaloneproject.git",
+  "author": "yue.ren <ry15594682834@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "start":"npx webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
+}

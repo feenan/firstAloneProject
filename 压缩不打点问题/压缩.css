@@ -1,0 +1,209 @@
+article {
+  width: 90%;
+  margin: 15px auto;
+}
+article section {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 300px;
+  margin: 0 auto;
+}
+#main {
+  width: 80%;
+  min-height: 300px;
+  margin-right: 10px;
+  background: #fff;
+}
+article aside {
+  flex-shrink: 0;
+  width: 290px;
+  min-height: 300px;
+  background: #f40;
+}
+.main-nav {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-size: 0;
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma,
+    "Hiragino Sans GB", STHeiti, sans-serif !important;
+  color: #80bd01;
+  background-color: #f6f6f6;
+}
+.main-nav span {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 14px;
+}
+.main-nav span:hover {
+  color: #005580;
+}
+.main-nav span.active {
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #80bd01;
+}
+
+/* 帖子区域 */
+.main-wrapper {
+  width: 100%;
+}
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-bottom: 1px solid;
+  border-bottom-color: #f0f0f0;
+}
+.main-content:hover {
+  background-color: #f5f5f5;
+}
+.main-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.main-left a {
+  flex-shrink: 0;
+}
+.main-left img {
+  width: 30px;
+  height: 30px;
+}
+.main-left .main-text {
+  display: flex;
+  flex-grow: 1;
+}
+.main-text .main-text-left {
+  flex-shrink: 0;
+  width: 70px;
+  font-size: 10px;
+  text-align: center;
+}
+.main-text-left span.comment {
+  font-size: 14px;
+  color: #9e78c0;
+}
+.main-text-left span.view {
+  font-size: 12px;
+  color: #b4b4b4;
+}
+.main-text .main-text-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+.main-text-right span.impo {
+  color: #fff;
+  background: #80bd01;
+}
+.main-text-right span.ordin {
+  color: #999;
+  background: #e5e5e5;
+}
+.main-text-right > span {
+  flex-shrink: 0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  vertical-align: 2px;
+  font-size: 12px;
+}
+.main-text-right a {
+  flex-grow: 1;
+  margin-left: 3px;
+  color: #333;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-text-right a:hover {
+  text-decoration: underline;
+}
+.main-right {
+  flex-shrink: 0;
+}
+.main-right a {
+  font-size: 12px;
+  color: #778087;
+}
+.main-right img.user-imgSmall {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+.main-right a span.time {
+  display: inline-block;
+  width: 53px;
+  text-align: right;
+}
+/* @media (min-width: 980px) and (max-width:1100px){ */
+  /*在满足980px条件前压缩时主题部分位置被挤占为了不使右侧时间和图片换行必须把宽度设置的小一些*/
+  /* .main-text-right a{
+    max-width:320px;
+  }
+  
+} */
+@media (max-width: 980px) {
+  #main {
+    width: 100%;
+  }
+  article aside {
+    display: none;
+  }
+  .main-content {
+    line-height: 14px;
+  }
+  .main-left {
+    flex-grow: 0;
+    width: calc(100% - 53px);/*把视觉上的右侧时间位置留出来*/
+  }
+
+  /* .main-left .main-text {
+    flex-direction: column-reverse;
+    flex-grow: 0;
+    width: calc(100% - 30px);
+  } */
+  .main-text-left span.comment {
+    margin-left: 45px;
+    font-size: 12px;
+  }
+  /* .main-text .main-text-right {
+    flex-grow: 0;
+    width: 100%;
+  } */
+  .main-text-right > span {
+    margin-left: 10px;
+  }
+  .main-text-right a {
+    font-size: 14px;
+    /* flex-grow: 0;
+    width: calc(100% - 32px); */
+    /* max-width:600px; */
+    min-width: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .main-right img.user-imgSmall {
+    display: none;
+  }
+  .main-right span.time {
+    position: absolute;
+    right: 15px;
+    top: 28px;
+  }
+}

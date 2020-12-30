@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNode: Node.js专业中文社区</title>
+    <link rel="icon" href="../src/image/icon.png">
+    <link rel="stylesheet" href="../src/css/nav.css">
+    <link rel="stylesheet" href="../src/css/main.css" />
+    <link rel="stylesheet" href="../src/css/aside.css" />
+    <link rel="stylesheet" href="../src/css/footer.css" />
+</head>
+<body>
+   <!-- 头部导航栏 -->
+   <header>
+    <div class="nav">
+        <div id="nav-wrapper">
+            <div class="nav-rightContent"><a href="#"><img src="../src/image/logo.svg" alt=""></a><div class="nav-search">
+                    <span class="iconfont">&#xe618;</span><input type="text"> 
+                </div>   
+           </div>
+           <div class="nav-leftContent">
+               <ul>
+               <li><a href="http://127.0.0.1:5500/public/shouye.html">首页</a></li>
+               <li><a href="http://127.0.0.1:5500/public/xinshou.html">新手入门</a></li>
+               <li><a href="http://127.0.0.1:5500/public/API.html">API</a></li>
+               <li><a href="http://127.0.0.1:5500/public/guanyu.html">关于</a></li>
+               <li><a href="https://github.com/login/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcnodejs.org%2Fauth%2Fgithub%2Fcallback&client_id=0625d398dd9166a196e9">注册</a></li>
+               <li><a href="http://127.0.0.1:5500/public/denglu.html">登录</a></li>
+              </ul>
+          </div>
+        </div>
+    </div>
+</header>
+<article>
+    <!-- 左侧帖子主区域 -->
+    <section>
+      <div id="main">
+        <div class="main-nav">
+          <div class="main-xinshounav nav-active">
+            <a href="http://127.0.0.1:5500/public/shouye.html">主页</a
+            >/&nbsp;&nbsp;登录
+          </div>
+          <div class="main-xinshounav nav-hidden">
+            <a href="http://127.0.0.1:5500/public/shouye.html">主页</a
+            >/&nbsp;&nbsp;找回密码
+          </div>
+        </div>
+          <div class="main-xinshoucontent content-active">
+              <form class="form1">
+                  <div class="form-text">
+                    <div><label for="signup">用户名</label><input type="text" id="signup" class="active"></div>
+                    <div><label for="inpassword">密码</label><input type="text" id="inpassword"></div>
+                  </div>
+                  <div class="form-btn">
+                      <a href="#" class="sign-up">登录</a>
+                      <a href="https://github.com/login/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcnodejs.org%2Fauth%2Fgithub%2Fcallback&client_id=0625d398dd9166a196e9"
+              class='sign-up'>通过&nbsp;&nbsp;GitHub&nbsp;&nbsp;登录</a>
+                      <span class="span-special">忘记密码了?</span>
+                  </div>
+                  
+                </form>
+          </div>
+          <div class="main-xinshoucontent content-hidden">
+            <form class="form2">
+              <div class="form-text">
+                  <div><label for="email">电子邮箱</label><input type="text" id="email" class="active"></div>
+                  <div>请输入您注册帐户时使用的电子邮箱</div>
+                </div>
+                <div class="form-btn">
+                  <a href="#" class="sign-up">提交</a>
+              </div>
+            </form>
+        </div>
+       
+      </div>
+      <!-- 右侧侧边栏 -->
+      <aside>
+        <div class="about">
+          <div class="header">关于</div>
+          <div class="about-inner">
+            <p>CNode：Node.js专业中文社区</p>
+            <p>在这里你可以：</p>
+            <ul>
+              <li>向别人提出你遇到的问题</li>
+              <li>帮助遇到问题的人</li>
+              <li>分享自己的知识</li>
+              <li>和其它人一起进步</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </article>
+  <!-- 页面尾部 -->
+  <footer class="footer-position">
+    <div class="footer-wrapper1">
+      <div class="footer-wrapper2">
+        <div class="foot-header">
+          <a href="https://cnodejs.org/rss">RSS</a>&nbsp;|&nbsp;<a
+            href="https://github.com/cnodejs/nodeclub/"
+            >源码地址</a
+          >
+        </div>
+        <p>
+          CNode 社区为国内最专业的 Node.js 开源技术社区，致力于 Node.js
+          的技术研究。
+        </p>
+        <p>
+          服务器搭建在
+          <a href="https://www.digitalocean.com/?refcode=eba02656eeb3"
+            ><img src="../src/image/footer_01.png" alt=""
+          /></a>
+          ，存储赞助商为
+          <a href="https://www.qiniu.com/?ref=cnode"
+            ><img src="../src/image/footer_02.png" alt=""
+          /></a>
+        </p>
+        <p>
+          新手搭建 Node.js 服务器，推荐使用无需备案的
+          <a
+            href="https://www.digitalocean.com/?refcode=eba02656eeb3"
+            class="footer"
+            >DigitalOcean(https://www.digitalocean.com/)</a
+          >
+        </p>
+      </div>
+      
+    </div>
+  </footer>
+</body>
+</html>

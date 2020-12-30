@@ -1,0 +1,51 @@
+footer{
+    width: 100%;
+    background-color:#fff ;
+    line-height: 2em;
+}
+.footer-wrapper1{
+    width: 90%;
+    padding:15px 0;/*margin塌陷问题为了撑开父元素只能用padding*/
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.footer-wrapper2{
+    width: 80%;
+}
+.foot-header{
+    font-size: 13px;
+    color: #e2e2e2;
+}
+.foot-header a{
+    color:#666;
+    cursor: pointer;
+}
+.foot-header a:hover{
+    color: #385f8a;
+}
+footer p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #ababab;
+    margin-bottom: 10px;
+}
+footer img{
+    width: 92px;
+    cursor: pointer;
+}
+footer a.footer{
+    color: #0088cc;
+    cursor: pointer;
+}
+footer a.footer:hover{
+    color: #005580;
+}
+footer.footer-position{
+    position: fixed;
+    bottom: 0;
+}
+@media (max-width: 980px) {
+      footer{
+        display: none;
+      }
+  }
