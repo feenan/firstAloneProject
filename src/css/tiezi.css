@@ -1,0 +1,145 @@
+#main.tiezi .tiezi-wrapper{
+    background: #fff;
+    border-radius: 0 0 3px 3px;
+    margin-bottom: 10px;
+  }
+  .tiezi-header{
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .tiezi-header > span{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0;
+  }
+  .tiezi-author{
+    font-size:12px;
+    color: #838383;
+    line-height: 20px;
+  }
+  .tiezi-author span::before{
+    display: inline-block;
+    content:'';
+    margin-right:5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color:#838383;
+    vertical-align: middle;
+  }
+  .tiezi-author a{
+    color:#838383;
+  }
+  .tiezi-author a:hover{
+    text-decoration: underline;
+  }
+  .tiezi-content{
+    margin:0 10px 10px 10px;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.7em;
+  }
+  
+  .tiezi-content h1,
+  .tiezi-content h2,
+  .tiezi-content h3{
+    margin: 30px 0 15px 0;
+    border-bottom: 1px solid #eee;
+    line-height: 40px;
+  }
+  .tiezi-content h1:first-child{
+    margin: 0 0 15px;
+    font-size: 40px;
+  }
+  .tiezi-content h2:first-child,
+  .tiezi-content h3:first-child{
+    margin: 0 0 15px;
+  }
+  .tiezi-content h1{
+    font-size: 32.5px;
+  }
+  .tiezi-content h2{
+    font-size:26px;
+  }
+  .tiezi-content h3{
+    font-size: 24.5px;
+  }
+  .tiezi-content img{
+      max-width: 100%;
+      display: block;
+  }
+  .tiezi-content pre{
+    background: #f7f7f7;
+  }
+  .tiezi-content p{
+    margin-bottom: 15px;
+    word-break: break-all;
+  }
+  .tiezi-content ul{
+    margin-left: 20px;
+    list-style-type: disc;
+    font-size: 14px;
+    color: #333;
+    line-height: 2em;
+  }
+  .tiezi-content a{
+    color: #08c;
+  }
+  .tiezi-content a:hover{
+    text-decoration: underline;
+  }
+  .tiezi-comment .comment-num{
+     font-size:14px;
+     color: #444;
+     line-height: 20px;
+  }
+  .notsame > li{
+    padding: 10px;
+    min-height: 61px;
+    border-top: 1px solid #f0f0f0;
+    background: #fff;
+  }
+ .notsame > li .ulFace{
+    display: flex;
+   
+  }
+ .markdown-text ul{
+      display: block;
+      padding-left: 30px;
+       color: #333;
+       font-size: 14px;
+       line-height: 2em;
+      list-style-type: disc;
+  }
+  .markdown-text a{
+    color: #08c;
+    font-size: 15px;
+  }
+  .notsame > li > li{
+    float: left;
+  }
+  .comment-inner a{
+    display: inline-block;
+  }
+  .comment-inner img{
+    width:30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .comment-inner p a{ 
+    line-height:20px;
+  }
+  .comment-inner p a:nth-child(1){
+    margin-right: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #666;
+  }
+  .comment-inner p a:nth-child(2){
+    font-size: 11px;
+    color: #08c;
+  }
+  .comment-inner p a:nth-child(2):hover{
+    text-decoration: underline;
+  }

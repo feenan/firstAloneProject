@@ -21,12 +21,12 @@
            </div>
            <div class="nav-leftContent">
                <ul>
-               <li><a href="http://127.0.0.1:5500/public/shouye.html">首页</a></li>
-               <li><a href="http://127.0.0.1:5500/public/xinshou.html">新手入门</a></li>
-               <li><a href="http://127.0.0.1:5500/public/API.html">API</a></li>
-               <li><a href="http://127.0.0.1:5500/public/guanyu.html">关于</a></li>
+               <li><a href="./shouye.html">首页</a></li>
+               <li><a href="./xinshou.html">新手入门</a></li>
+               <li><a href="./API.html">API</a></li>
+               <li><a href="./guanyu.html">关于</a></li>
                <li><a href="https://github.com/login/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcnodejs.org%2Fauth%2Fgithub%2Fcallback&client_id=0625d398dd9166a196e9">注册</a></li>
-               <li><a href="http://127.0.0.1:5500/public/denglu.html">登录</a></li>
+               <li><a href="./denglu.html">登录</a></li>
               </ul>
           </div>
         </div>
@@ -38,22 +38,22 @@
       <div id="main">
         <div class="main-nav">
           <div class="main-xinshounav nav-active">
-            <a href="http://127.0.0.1:5500/public/shouye.html">主页</a
+            <a href="./shouye.html">主页</a
             >/&nbsp;&nbsp;登录
           </div>
           <div class="main-xinshounav nav-hidden">
-            <a href="http://127.0.0.1:5500/public/shouye.html">主页</a
+            <a href="./shouye.html">主页</a
             >/&nbsp;&nbsp;找回密码
           </div>
         </div>
           <div class="main-xinshoucontent content-active">
               <form class="form1">
                   <div class="form-text">
-                    <div><label for="signup">用户名</label><input type="text" id="signup" class="active"></div>
-                    <div><label for="inpassword">密码</label><input type="text" id="inpassword"></div>
+                    <div><label for="signIn">用户名</label><input type="text" id="signIn" name='signIn'></div>
+                    <div><label for="inpassword">密码</label><input type="password" id="inpassword" name='inpassword'></div>
                   </div>
                   <div class="form-btn">
-                      <a href="#" class="sign-up">登录</a>
+                      <a href="#" class="sign-up sign-in">登录</a>
                       <a href="https://github.com/login/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcnodejs.org%2Fauth%2Fgithub%2Fcallback&client_id=0625d398dd9166a196e9"
               class='sign-up'>通过&nbsp;&nbsp;GitHub&nbsp;&nbsp;登录</a>
                       <span class="span-special">忘记密码了?</span>
@@ -64,11 +64,11 @@
           <div class="main-xinshoucontent content-hidden">
             <form class="form2">
               <div class="form-text">
-                  <div><label for="email">电子邮箱</label><input type="text" id="email" class="active"></div>
+                  <div><label for="email">电子邮箱</label><input type="text" id="email" name="email"></div>
                   <div>请输入您注册帐户时使用的电子邮箱</div>
                 </div>
                 <div class="form-btn">
-                  <a href="#" class="sign-up">提交</a>
+                  <a href="#" class="sign-up signUp">提交</a>
               </div>
             </form>
         </div>
@@ -128,5 +128,6 @@
       
     </div>
   </footer>
+  <script src="../src/js/signIn.js"></script>
 </body>
 </html>

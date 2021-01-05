@@ -1,102 +1,75 @@
-var message;
-var shouyewrapper = document.querySelectorAll('#shouye')[0];
 
-async function getData (url){
-    var urlend = url ? url : '';
-    var resp = await fetch('https://cnodejs.org/api/v1/topics'+urlend);
-    var result = await resp.json();
-    console.log(1)
-    return result
-}
-function render(data,wrapper){
-    console.log(wrapper);
-    var htmlStr = '';
-    for(var i = 0;i< data.length;i++){
-       
-       htmlStr += createEle(data[i]);
+function bindEvent() {
+  // 首页
+  //滚动事件,回到顶部
+  const goBack = document.getElementById("goBack");
+  window.onscroll = function () {
+    if (this.pageYOffset > 250) {
+      goBack.style.display = "block";
+    } else {
+      goBack.style.display = "none";
     }
-    wrapper.innerHTML = htmlStr;
-}
-function createEle(data){
-  var replyCount = data.reply_count;
-  var visitCount = data.visit_count;
-  /*关于置顶贴和精华贴以及别的贴判断比较深，首先是文字的显示有5种，之后样式的判断也是基于此*/
-  var tab = data.top == true ? '置顶':(data.good == true ? '精华' : (data.tab ? (data.tab === 'ask' ? '问答': (data.tab === 'share' ? '分享' : '')):'' ));
-  var title = data.title;
-  var lastTime = data.last_reply_at;
-return  ` <div class="main-content content-hover">
-  <div class="main-left">
-    <a href="http://127.0.0.1:5500/public/user.html"
-      ><img
-        src="../src/image/main-content-img_01.jpg"
-        alt=""
-        class="user-img"
-    /></a>
-    <div class="main-text">
-      <div class="main-text-left">
-        <span class="comment">${replyCount}</span>/<span class="view"
-          >${visitCount}</span
-        >
-      </div>
-      <div class="main-text-right">
-        <span class=${tab ? ((tab === '置顶' || tab === '精华')?'impo' : 'ordin') : ''}>${tab}</span
-        ><a
-          href="http://127.0.0.1:5500/public/tiezi.html"
-          title="${title}"
-          >${title}</a
-        >
-      </div>
-    </div>
-  </div>
-  <div class="main-right">
-    <a href="http://127.0.0.1:5500/public/tiezi.html">
-      <img
-        src="../src/image/main-content-img_01.jpg"
-        alt=""
-        class="user-imgSmall"
-      /><span class="time">1小时前</span>
-    </a>
-  </div>
-</div>`;
-
-} 
-
-getData().then((resp)=>{
-    message = resp.data;
-    console.log(message);
-    render(message,shouyewrapper);
-});
-  
-function Active(domArr,nowDom){
-    //处理所有类名激活
-    var len = domArr.length;
-    for(let i = 0;i<len;i++){
-        domArr[i].classList.remove('active');
-        nowDom.classList.add('active');
-    }
-} 
-function bindEvent(){
-    // 首页
-    //导航
-    var shouyenav = document.querySelectorAll('#shouye-nav span');
-    var shouyenavLen = shouyenav.length;
-    for(let i = 0;i<shouyenavLen;i++){
-      shouyenav[i].onclick = function(e){
-        if(this.classList.contains('active')){
-            return
-        }else{
-            Active(shouyenav,this);
-            console.log( this.dataset.id);
-        getData ('?tab='+ this.dataset.id).then((resp)=>{
-            message = resp.data;
-            console.log(message);
-            render(message,shouyewrapper);
-        });
-        
-        }
+  };
+  //首页导航切换
+  var shouyenav = document.querySelectorAll("#shouye-nav span");
+  var shouyenavLen = shouyenav.length;
+  for (let i = 0; i < shouyenavLen; i++) {
+    shouyenav[i].onclick = function (e) {
+      if (this.classList.contains("active")) {
+        return;
+      } else {
+        Active(shouyenav, this);
+        tab = this.dataset.id;
+        currentPage = 1;
+        renderBtn();
+        getDataCommonThen("topics?tab=" + this.dataset.id, shouyewrapper);
       }
+    };
+  }
+  //帖子点击事件
+  shouyewrapper.onclick = function (e) {
+    const targetDom = e.target;
+    if (targetDom.className === "tieziCapture") {
+      localStorage.setItem(targetDom.id, targetDom.id);
+    } else {
+      return;
     }
-
+  };
+  //按钮翻页
+  var btnWrap = document.getElementById("turnPage-btn");
+  btnWrap.onclick = function (e) {
+    if (e.target.className) {
+      if (e.target.className === "first-btn") {
+        turnPage(-1);
+        getDataCommonThen("topics?tab=" + tab + "&page=" + currentPage, shouyewrapper);
+      } else {
+        turnPage(+1);
+        getDataCommonThen("topics?tab=" + tab + "&page=" + currentPage, shouyewrapper);
+      }
+    } else if (e.target.dataset.id) {
+      currentPage = +e.target.dataset.id;
+      getDataCommonThen("topics?tab=" + tab + "&page=" + currentPage, shouyewrapper);
+      renderBtn();
+    }
+  };
 }
-bindEvent();
-
+let message;
+let shouyewrapper = document.querySelectorAll("#shouye")[0];
+let tab = "all";
+let currentPage = 1;
+// 初始化
+function init() {
+  getData().then((resp) => {
+    message = resp.data;
+    // console.log(message);
+    render(message, shouyewrapper); //数据驱动页面渲染
+    renderBtn(); //渲染按钮组
+    bindEvent(); //绑定所有事件
+    // 获取locastorage里的数据,通过访问记录来达到变色目的。
+    for (let i = 0; i < localStorage.length; i++) {
+      var handleTargetDom = document.getElementById(localStorage.key(i));
+      handleTargetDom && handleTargetDom.classList.add("active");
+    }
+  });
+}
+init();

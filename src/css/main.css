@@ -12,14 +12,15 @@ article section {
   min-height: 300px;
   margin: 0 auto;
 }
-#main,.tiezi{
+#main,
+.tiezi {
   width: 80%;
   min-height: 300px;
   margin-right: 10px;
   background: #fff;
   border-radius: 3px;
 }
-#main.tiezi{
+#main.tiezi {
   background: transparent;
 }
 /*主体导航区域*/
@@ -61,24 +62,25 @@ article section {
 .main-xinshounav a:hover {
   text-decoration: underline;
 }
-#main-userMessage{
+#main-userMessage {
   padding: 10px;
   margin-bottom: 10px;
   line-height: 2em;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
-  background:#fff;
+  background: #fff;
 }
 #main-userMessage {
   font-size: 14px;
 }
-#main-userMessage a{/*类名服用问题，所以必须a再设一次，否则权重不够还是显示16px*/
+#main-userMessage a {
+  /*类名服用问题，所以必须a再设一次，否则权重不够还是显示16px*/
   font-size: 14px;
 }
-#main-userMessage span{
-  color:#778087;
+#main-userMessage span {
+  color: #778087;
 }
-#main-userMessage li span{
+#main-userMessage li span {
   margin-right: 3px;
   font-size: 16px;
 }
@@ -109,107 +111,15 @@ article section {
 .content-hover:hover {
   background-color: #f5f5f5;
 }
-#main.tiezi .tiezi-wrapper{
-  background: #fff;
-  border-radius: 0 0 3px 3px;
-  margin-bottom: 10px;
-}
-.tiezi-header{
-  padding: 10px;
-  border-bottom: 1px solid #e5e5e5;
-}
-.tiezi-header > span{
-  display: inline-block;
-  font-size: 22px;
-  font-weight: 700;
-  margin: 8px 0;
-}
-.tiezi-author{
-  font-size:12px;
-  color: #838383;
-  line-height: 20px;
-}
-.tiezi-author span::before{
-  display: inline-block;
-  content:'';
-  margin-right:5px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color:#838383;
-  vertical-align: middle;
-}
-.tiezi-author a{
-  color:#838383;
-}
-.tiezi-author a:hover{
-  text-decoration: underline;
-}
-.tiezi-content{
-  margin:0 10px 10px 10px;
-}
-.tiezi-content p{
-  margin-bottom: 15px;
-  font-size:15px;
+
+/* p标签里无法放div，就直接被挤出变成兄弟标签了 */
+.markdown-text p {
   line-height: 1.7em;
-  word-break: break-all;
-}
-.tiezi-content ul{
-  margin-left: 20px;
-  list-style-type: disc;
-  font-size: 14px;
+  padding-left: 10px;
   color: #333;
-  line-height: 2em;
+  font-size: 15px;
 }
-.tiezi-content a{
-  color: #08c;
-}
-.tiezi-content a:hover{
-  text-decoration: underline;
-}
-.tiezi-comment .comment-num{
-   font-size:14px;
-   color: #444;
-   line-height: 20px;
-}
-.comment-inner .notsame > li{
-  padding: 10px;
-  height: 61px;
-  border-top: 1px solid #f0f0f0;
-  background: #fff;
-}
-.comment-inner .notsame > li li{
-  float: left;
-}
-.comment-inner a{
-  display: inline-block;
-}
-.comment-inner img{
-  width:30px;
-  height: 30px;
-  margin-right: 10px;
-}
-.comment-inner p a{ 
-  line-height:20px;
-}
-.comment-inner p a:nth-child(1){
-  margin-right: 2px;
-  font-weight: 700;
-  font-size: 12px;
-  color: #666;
-}
-.comment-inner p a:nth-child(2){
-  font-size: 11px;
-  color: #08c;
-}
-.comment-inner p a:nth-child(2):hover{
-  text-decoration: underline;
-}
-.comment{
-  line-height: 1.7em;
-  padding-left:10px;
-}
-.range-table table{
+.range-table table {
   width: 100%;
   font-size: 14px;
   color: #333;
@@ -224,46 +134,31 @@ article section {
 }
 .range-table tr {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-.range-table tr td:nth-child(1){
-  flex-grow:1;
-  max-width: 112px;
-}
-.range-table tr td:nth-child(2){
-  flex-grow:3;
-  max-width: 504px;
-}
-.range-table tr td:nth-child(3){
-  flex-grow:1.2
-}
-.range-table tr td:nth-child(4){
-  flex-grow:1.2
-}
-.range-table tr td:nth-child(5){
-  flex-grow:1.2
 }
 .range-table td {
   padding: 4px 5px;
-  max-width: 159px;
+  width:16.6%;
   word-break: break-all;
- 
 }
-table tbody tr{
+.range-table tr td:nth-child(2) {
+  width:50%;
+}
+table tbody tr {
   border-top: 1px solid #ddd;
 }
-table tbody tr:nth-child(2n + 1){
-  background-color:#f9f9f9;
-  
+table tbody tr:nth-child(2n + 1) {
+  background-color: #f9f9f9;
 }
-.range-table a{
+.range-table a {
   display: inline-block;
   color: #778087;
 }
-.range-table a:hover{
+.range-table a:hover {
   text-decoration: underline;
 }
-.range-table img{
+.range-table img {
   margin-right: 5px;
   width: 30px;
   height: 30px;
@@ -538,7 +433,13 @@ table tbody tr:nth-child(2n + 1){
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+/* 帖子标签使用visited来控制颜色变化不起作用 */
+/* .main-text-right a:visited {
+  color: #888;
+} */
+.main-text-right a.active {
+  color: #888;
+}
 .main-text-right a:hover {
   text-decoration: underline;
 }
@@ -566,7 +467,8 @@ table tbody tr:nth-child(2n + 1){
   .main-text-right a {
     max-width: 320px;
   }
-  article,.footer-wrapper1{
+  article,
+  .footer-wrapper1 {
     min-width: 960px; /*过渡期间该主体宽度不变，如果一开始就设置此项，那么满足980条件后就无法在压缩了,footer设置此项是为了和主体保持一致*/
   }
 }
@@ -576,7 +478,8 @@ table tbody tr:nth-child(2n + 1){
     margin: 15px 5px;
   }
 
-  #main,.tiezi{
+  #main,
+  .tiezi {
     width: 100%;
     margin-right: 0;
   }
@@ -615,6 +518,7 @@ table tbody tr:nth-child(2n + 1){
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .main-right img.user-imgSmall {
     display: none;
   }
@@ -625,32 +529,51 @@ table tbody tr:nth-child(2n + 1){
   }
 }
 
-.turnPage-btn {
+#turnPage-btn {
   padding: 10px;
   font-size: 0;
   line-height: 16px;
 }
-.turnPage-btn a {
+#turnPage-btn a {
   display: inline-block;
   padding: 4px 12px;
   border: 1px solid #ddd;
   border-left-width: 0;
   font-size: 14px;
   color: #778087;
+  cursor: pointer;
 }
-.turnPage-btn a.first-btn {
+#turnPage-btn a.first-btn {
   border-left-width: 1px;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-.turnPage-btn a.last-btn {
+#turnPage-btn a.last-btn {
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-.turnPage-btn a:hover {
+#turnPage-btn a:hover {
   background-color: #f5f5f5;
 }
-.turnPage-btn a.active {
+#turnPage-btn a.active {
   color: #80bd01;
   background-color: transparent;
+}
+
+/* 回到顶部 */
+#goBack {
+  display: none;
+}
+#goBack a {
+  position: fixed;
+  bottom: 100px;
+  right: 0;
+  width: 24px;
+  padding: 12px 0 12px 5px;
+  border-radius: 12px 0 0 12px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  color: gray;
+  background-color: #f5f5f5;
 }
